@@ -1,4 +1,4 @@
-[gd_scene load_steps=40 format=3 uid="uid://bphxc1fm5eojp"]
+[gd_scene load_steps=41 format=3 uid="uid://bphxc1fm5eojp"]
 
 [ext_resource type="Texture2D" uid="uid://cdemyn3haxsor" path="res://assets/characters/player.png" id="1_h56oj"]
 [ext_resource type="Script" path="res://script/player.gd" id="1_ix27p"]
@@ -288,15 +288,24 @@ animations = [{
 "speed": 5.0
 }]
 
+[sub_resource type="CircleShape2D" id="CircleShape2D_r2p6w"]
+radius = 4.0
+
 [node name="CharacterBody2D" type="CharacterBody2D"]
 script = ExtResource("1_ix27p")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+position = Vector2(0, 9.53674e-07)
+scale = Vector2(0.666667, 0.666667)
 sprite_frames = SubResource("SpriteFrames_hnjyh")
 animation = &"back_idle"
 frame_progress = 0.000332791
 
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(0, 9)
+shape = SubResource("CircleShape2D_r2p6w")
+
 [node name="Camera2D" type="Camera2D" parent="."]
-zoom = Vector2(2, 2)
+zoom = Vector2(3, 3)
 limit_smoothed = true
 position_smoothing_enabled = true

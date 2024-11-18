@@ -16,6 +16,10 @@ config/features=PackedStringArray("4.3", "Forward Plus")
 config/icon="res://assets/icon.svg"
 run/stretch/scale=1.0
 
+[autoload]
+
+global="*res://script/global.gd"
+
 [display]
 
 window/size/mode=3
