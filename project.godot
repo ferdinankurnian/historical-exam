@@ -19,6 +19,8 @@ run/stretch/scale=1.0
 [autoload]
 
 global="*res://script/global.gd"
+dialog="*res://script/dialog.gd"
+objective="*res://script/objective.gd"
 
 [display]
 

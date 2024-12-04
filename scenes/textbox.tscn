@@ -1,0 +1,75 @@
+[gd_scene load_steps=4 format=3 uid="uid://cjx5akusr2gh1"]
+
+[ext_resource type="FontFile" uid="uid://u7dtbfd0hsqb" path="res://assets/VT323-Regular.ttf" id="1_6q361"]
+[ext_resource type="Script" path="res://script/textbox.gd" id="1_jxpmg"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_5qvy7"]
+bg_color = Color(0.630956, 0.506926, 0.180264, 1)
+border_width_left = 15
+border_width_top = 15
+border_width_right = 15
+border_width_bottom = 15
+border_color = Color(0.271492, 0.207081, 0.056428, 1)
+
+[node name="Textbox" type="CanvasLayer"]
+script = ExtResource("1_jxpmg")
+
+[node name="TextboxContainer" type="MarginContainer" parent="."]
+anchors_preset = 12
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_top = -334.0
+grow_horizontal = 2
+grow_vertical = 0
+theme_override_constants/margin_left = 40
+theme_override_constants/margin_top = 67
+theme_override_constants/margin_right = 40
+theme_override_constants/margin_bottom = 16
+
+[node name="Panel" type="Panel" parent="TextboxContainer"]
+layout_mode = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_5qvy7")
+
+[node name="MarginContainer" type="MarginContainer" parent="TextboxContainer"]
+layout_mode = 2
+theme_override_constants/margin_left = 32
+theme_override_constants/margin_top = 32
+theme_override_constants/margin_right = 32
+theme_override_constants/margin_bottom = 32
+
+[node name="Panel" type="Panel" parent="TextboxContainer/MarginContainer"]
+visible = false
+layout_mode = 2
+
+[node name="VBoxContainer" type="VBoxContainer" parent="TextboxContainer/MarginContainer"]
+layout_mode = 2
+theme_override_constants/separation = 5
+
+[node name="Subject" type="Label" parent="TextboxContainer/MarginContainer/VBoxContainer"]
+layout_mode = 2
+size_flags_vertical = 0
+theme_override_colors/font_color = Color(0.936814, 0.835039, 0.57174, 1)
+theme_override_fonts/font = ExtResource("1_6q361")
+theme_override_font_sizes/font_size = 30
+text = "Teacher"
+
+[node name="Message" type="Label" parent="TextboxContainer/MarginContainer/VBoxContainer"]
+layout_mode = 2
+size_flags_vertical = 3
+theme_override_colors/font_color = Color(0.993702, 0.906447, 0.681259, 1)
+theme_override_fonts/font = ExtResource("1_6q361")
+theme_override_font_sizes/font_size = 35
+text = "Text goes here yeah and lorem ipsum dolor sit amet, consectetur adipiscing velit, et lorem ipsum dolored sat, la main pour ta vie en lui."
+autowrap_mode = 2
+visible_characters = 0
+visible_ratio = 0.0
+
+[node name="EndMessage" type="Label" parent="TextboxContainer/MarginContainer/VBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 8
+size_flags_vertical = 8
+theme_override_colors/font_color = Color(0.330344, 0.267296, 0.103003, 1)
+theme_override_fonts/font = ExtResource("1_6q361")
+theme_override_font_sizes/font_size = 26
+text = "Press space to continue"

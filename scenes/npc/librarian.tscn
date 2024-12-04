@@ -1,0 +1,32 @@
+[gd_scene load_steps=5 format=3 uid="uid://bvxr4kxeyf6wm"]
+
+[ext_resource type="Texture2D" uid="uid://quypxpcsga4" path="res://assets/characters/librarian.png" id="1_rln2e"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_us7qm"]
+atlas = ExtResource("1_rln2e")
+region = Rect2(0, 0, 48, 48)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_csvaa"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_us7qm")
+}],
+"loop": true,
+"name": &"idle",
+"speed": 5.0
+}]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_hyc2u"]
+radius = 6.0
+
+[node name="librarian" type="CharacterBody2D"]
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+scale = Vector2(0.8, 0.8)
+sprite_frames = SubResource("SpriteFrames_csvaa")
+animation = &"idle"
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(0, 13)
+shape = SubResource("CircleShape2D_hyc2u")

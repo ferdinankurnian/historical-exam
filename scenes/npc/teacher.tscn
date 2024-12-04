@@ -1,0 +1,32 @@
+[gd_scene load_steps=5 format=3 uid="uid://cipafutq2el23"]
+
+[ext_resource type="Texture2D" uid="uid://bbkbcn472vo47" path="res://assets/characters/teacher.png" id="1_ekeet"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_w5c7l"]
+atlas = ExtResource("1_ekeet")
+region = Rect2(0, 0, 48, 48)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_v6ts6"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_w5c7l")
+}],
+"loop": true,
+"name": &"idle",
+"speed": 5.0
+}]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_twgit"]
+radius = 5.0
+
+[node name="teacher" type="CharacterBody2D"]
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+scale = Vector2(0.8, 0.8)
+sprite_frames = SubResource("SpriteFrames_v6ts6")
+animation = &"idle"
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(0, 13)
+shape = SubResource("CircleShape2D_twgit")
