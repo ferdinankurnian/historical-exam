@@ -1,0 +1,138 @@
+[gd_scene load_steps=8 format=3 uid="uid://k2oci018tem"]
+
+[ext_resource type="Script" path="res://script/book_2.gd" id="1_3p63q"]
+[ext_resource type="Texture2D" uid="uid://bhlsried50243" path="res://assets/misc/book_2.png" id="1_n3l3d"]
+[ext_resource type="Texture2D" uid="uid://7yjiqix8tsyu" path="res://assets/bookimg/prripermesta.jpg" id="2_43ohp"]
+[ext_resource type="Texture2D" uid="uid://cbviljyb6caxy" path="res://assets/bookimg/ventjesumual.jpeg" id="3_wudo2"]
+[ext_resource type="Texture2D" uid="uid://c2rtoieiq1he5" path="res://assets/bookimg/ahmadhusein.jpeg" id="4_8kqda"]
+[ext_resource type="Texture2D" uid="uid://41u1dodhw5p5" path="res://assets/misc/arrow_left.png" id="5_2jf8n"]
+[ext_resource type="Texture2D" uid="uid://dffjiqkhfs0yb" path="res://assets/misc/arrow_right.png" id="6_8cpdq"]
+
+[node name="book_2" type="Panel"]
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -372.0
+offset_top = -188.0
+offset_right = 372.0
+offset_bottom = 188.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_3p63q")
+
+[node name="TextureRect" type="TextureRect" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("1_n3l3d")
+
+[node name="page_1" type="Control" parent="."]
+visible = false
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="Prripermesta" type="Sprite2D" parent="page_1"]
+position = Vector2(190, 182)
+scale = Vector2(0.341, 0.341)
+texture = ExtResource("2_43ohp")
+
+[node name="Label" type="Label" parent="page_1"]
+layout_mode = 0
+offset_left = 408.0
+offset_top = 149.0
+offset_right = 696.0
+offset_bottom = 224.0
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/font_size = 14
+text = "Pemberontakan PRRI/Permesta 
+(Pemerintah Revolusioner Republik Indonesia/Perjuangan Semesta)"
+horizontal_alignment = 1
+autowrap_mode = 2
+
+[node name="page_2" type="Control" parent="."]
+visible = false
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="Label2" type="Label" parent="page_2"]
+layout_mode = 0
+offset_left = 47.0
+offset_top = 149.0
+offset_right = 335.0
+offset_bottom = 224.0
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/font_size = 14
+text = "PRRI/Permesta adalah pemberontakan yang terjadi pada tahun 1958 di Sumatra dan Sulawesi."
+horizontal_alignment = 1
+autowrap_mode = 2
+
+[node name="Label3" type="Label" parent="page_2"]
+layout_mode = 0
+offset_left = 407.0
+offset_top = 150.0
+offset_right = 695.0
+offset_bottom = 225.0
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/font_size = 14
+text = "Kelompok ini menuntut otonomi daerah yang lebih besar dan menentang kebijakan pemerintah pusat."
+horizontal_alignment = 1
+autowrap_mode = 2
+
+[node name="page_3" type="Control" parent="."]
+visible = false
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="Ventjesumual" type="Sprite2D" parent="page_3"]
+position = Vector2(118, 116)
+scale = Vector2(0.19606, 0.19606)
+texture = ExtResource("3_wudo2")
+
+[node name="Label4" type="Label" parent="page_3"]
+layout_mode = 0
+offset_left = 407.0
+offset_top = 150.0
+offset_right = 695.0
+offset_bottom = 225.0
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/font_size = 14
+text = "Tokoh utama: 
+Kolonel Ventje Sumual
+Letkol Ahmad Husein"
+horizontal_alignment = 1
+autowrap_mode = 2
+
+[node name="Ahmadhusein" type="Sprite2D" parent="page_3"]
+position = Vector2(256, 233)
+scale = Vector2(0.238518, 0.238518)
+texture = ExtResource("4_8kqda")
+
+[node name="prev_button" type="Button" parent="."]
+layout_mode = 0
+offset_left = 38.0
+offset_top = 288.0
+offset_right = 79.0
+offset_bottom = 329.0
+icon = ExtResource("5_2jf8n")
+flat = true
+icon_alignment = 1
+expand_icon = true
+
+[node name="next_button" type="Button" parent="."]
+layout_mode = 0
+offset_left = 666.0
+offset_top = 289.0
+offset_right = 706.0
+offset_bottom = 328.0
+icon = ExtResource("6_8cpdq")
+flat = true
+icon_alignment = 1
+expand_icon = true

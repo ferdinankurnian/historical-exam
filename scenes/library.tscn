@@ -1,4 +1,4 @@
-[gd_scene load_steps=41 format=3 uid="uid://84m1l67pgh4c"]
+[gd_scene load_steps=45 format=3 uid="uid://84m1l67pgh4c"]
 
 [ext_resource type="Script" path="res://script/library.gd" id="1_as5tw"]
 [ext_resource type="Texture2D" uid="uid://d4ji3dxihln2o" path="res://assets/wall/wall.png" id="1_vjdqu"]
@@ -16,6 +16,9 @@
 [ext_resource type="Texture2D" uid="uid://dfr752j0e5l3g" path="res://assets/misc/librarysign.png" id="9_lj7pj"]
 [ext_resource type="PackedScene" uid="uid://cg8bcy5sq4tup" path="res://scenes/hud.tscn" id="14_k3jpa"]
 [ext_resource type="PackedScene" uid="uid://bvxr4kxeyf6wm" path="res://scenes/npc/librarian.tscn" id="15_u3v1k"]
+[ext_resource type="PackedScene" uid="uid://cjx5akusr2gh1" path="res://scenes/textbox.tscn" id="16_j00a0"]
+[ext_resource type="Texture2D" uid="uid://defy4nn2gkiu8" path="res://assets/misc/exclamation.png" id="17_jq3l5"]
+[ext_resource type="Texture2D" uid="uid://bmuobd2j5266p" path="res://assets/misc/bookIndicator.png" id="18_fnh0g"]
 
 [sub_resource type="TileMapPattern" id="TileMapPattern_l1pef"]
 tile_data = PackedInt32Array(0, 65536, 0, 65536, 65536, 1)
@@ -221,6 +224,9 @@ pattern_1 = SubResource("TileMapPattern_3ps1m")
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_6xamo"]
 size = Vector2(30, 23)
 
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_yd670"]
+size = Vector2(14.5, 137.5)
+
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_w5vc1"]
 size = Vector2(37, 11.75)
 
@@ -232,8 +238,6 @@ radius = 11.4018
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_76ypf"]
 radius = 11.1803
-
-[sub_resource type="CircleShape2D" id="CircleShape2D_vt5e6"]
 
 [sub_resource type="Animation" id="Animation_j34qf"]
 length = 0.001
@@ -323,6 +327,9 @@ _data = {
 "changescene_out": SubResource("Animation_fgcnh")
 }
 
+[sub_resource type="CircleShape2D" id="CircleShape2D_j3r5a"]
+radius = 25.0799
+
 [node name="library" type="Node2D"]
 y_sort_enabled = true
 script = ExtResource("1_as5tw")
@@ -353,9 +360,23 @@ position = Vector2(448, 322)
 z_index = 2
 
 [node name="Pause" type="CanvasLayer" parent="."]
+layer = 8
 
 [node name="PauseMenu" parent="Pause" instance=ExtResource("5_7lwj5")]
 z_index = 10
+
+[node name="Textbox" parent="." instance=ExtResource("16_j00a0")]
+layer = 3
+
+[node name="Alert1" type="Sprite2D" parent="."]
+position = Vector2(450, 193)
+scale = Vector2(0.54297, 0.54297)
+texture = ExtResource("17_jq3l5")
+
+[node name="Alert2" type="Sprite2D" parent="."]
+position = Vector2(136, 133)
+scale = Vector2(0.54297, 0.54297)
+texture = ExtResource("17_jq3l5")
 
 [node name="collisions" type="StaticBody2D" parent="."]
 visible = false
@@ -372,11 +393,32 @@ shape = SubResource("RectangleShape2D_6xamo")
 [node name="librarian" parent="." instance=ExtResource("15_u3v1k")]
 position = Vector2(449, 202)
 
+[node name="talkself" type="Area2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="talkself"]
+position = Vector2(394, 261)
+shape = SubResource("RectangleShape2D_yd670")
+
 [node name="talk_to_librarian" type="Area2D" parent="."]
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="talk_to_librarian"]
 position = Vector2(448.5, 244.125)
 shape = SubResource("RectangleShape2D_w5vc1")
+
+[node name="BookIndict1" type="Sprite2D" parent="."]
+position = Vector2(227, 314)
+scale = Vector2(0.59375, 0.59375)
+texture = ExtResource("18_fnh0g")
+
+[node name="BookIndict2" type="Sprite2D" parent="."]
+position = Vector2(325, 122)
+scale = Vector2(0.59375, 0.59375)
+texture = ExtResource("18_fnh0g")
+
+[node name="BookIndict3" type="Sprite2D" parent="."]
+position = Vector2(212, 41)
+scale = Vector2(0.59375, 0.59375)
+texture = ExtResource("18_fnh0g")
 
 [node name="get_book1" type="Area2D" parent="."]
 
@@ -390,19 +432,11 @@ shape = SubResource("CircleShape2D_w17q3")
 position = Vector2(322, 131)
 shape = SubResource("CircleShape2D_pncph")
 
-[node name="Sprite2D" type="Sprite2D" parent="get_book2"]
-
 [node name="get_book3" type="Area2D" parent="."]
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="get_book3"]
 position = Vector2(212, 62)
 shape = SubResource("CircleShape2D_76ypf")
-
-[node name="electric_box" type="Area2D" parent="."]
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="electric_box"]
-position = Vector2(531, 195)
-shape = SubResource("CircleShape2D_vt5e6")
 
 [node name="BlackoutAnimation" type="AnimationPlayer" parent="."]
 libraries = {
@@ -416,6 +450,66 @@ offset_right = 688.0
 offset_bottom = 462.0
 color = Color(0, 0, 0, 1)
 
+[node name="sit_on_table" type="Area2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="sit_on_table"]
+position = Vector2(136, 152)
+shape = SubResource("CircleShape2D_j3r5a")
+
+[node name="view_book" type="CanvasLayer" parent="."]
+layer = 9
+
+[node name="book_viewport" type="Control" parent="view_book"]
+layout_mode = 3
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -20.0
+offset_top = -20.0
+offset_right = 20.0
+offset_bottom = 20.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="prev_button" type="Button" parent="view_book"]
+visible = false
+anchors_preset = 4
+anchor_top = 0.5
+anchor_bottom = 0.5
+offset_top = -4.0
+offset_right = 8.0
+offset_bottom = 4.0
+grow_vertical = 2
+text = "<-"
+
+[node name="next_button" type="Button" parent="view_book"]
+visible = false
+anchors_preset = 6
+anchor_left = 1.0
+anchor_top = 0.5
+anchor_right = 1.0
+anchor_bottom = 0.5
+offset_left = -23.0
+offset_top = -15.5
+offset_bottom = 15.5
+grow_horizontal = 0
+grow_vertical = 2
+text = "->"
+
 [connection signal="body_entered" from="outlibrary_transition_point" to="." method="_on_outlibrary_transition_point_body_entered"]
 [connection signal="body_exited" from="outlibrary_transition_point" to="." method="_on_outlibrary_transition_point_body_exited"]
+[connection signal="body_entered" from="talkself" to="." method="_on_talkself_body_entered"]
+[connection signal="body_exited" from="talkself" to="." method="_on_talkself_body_exited"]
+[connection signal="body_entered" from="talk_to_librarian" to="." method="_on_talk_to_librarian_body_entered"]
+[connection signal="body_exited" from="talk_to_librarian" to="." method="_on_talk_to_librarian_body_exited"]
+[connection signal="body_entered" from="get_book1" to="." method="_on_get_book_1_body_entered"]
+[connection signal="body_exited" from="get_book1" to="." method="_on_get_book_1_body_exited"]
+[connection signal="body_entered" from="get_book2" to="." method="_on_get_book_2_body_entered"]
+[connection signal="body_exited" from="get_book2" to="." method="_on_get_book_2_body_exited"]
+[connection signal="body_entered" from="get_book3" to="." method="_on_get_book_3_body_entered"]
+[connection signal="body_exited" from="get_book3" to="." method="_on_get_book_3_body_exited"]
 [connection signal="animation_finished" from="BlackoutAnimation" to="." method="_on_blackout_animation_animation_finished"]
+[connection signal="body_entered" from="sit_on_table" to="." method="_on_sit_on_table_body_entered"]
+[connection signal="body_exited" from="sit_on_table" to="." method="_on_sit_on_table_body_exited"]

@@ -20,7 +20,7 @@ var act2_bayu_6 = "Siap, Bu. Nih, kartunya."
 var act2_librarian_7 = "Oke, udah beres. Silakan baca bukunya, dek!"
 var act2_bayu_8 = "Oke makasih, Bu."
 var act2_bayu_9 = "Oke, sudah semua nya, sekarang akan ku baca."
-var act2_bayu_10 = "Oke, buku-bukunya udah selesai. Waktunya pulang, ah."
+var act2_bayu_10 = "Oke, baca bukunya udah selesai. Waktunya pulang, ah."
 
 # Dialogue Act 3
 var act3_teacher_1 = "Oke anak-anak, kita mulai ulangannya, ya. Semoga hasilnya bagus!"
@@ -30,12 +30,18 @@ var act3_teacher_4 = "Oke, anak-anak, ini hasil ulangan sejarah kalian. "
 var act3_teacher_5 = "Indra, kamu dapet 90."
 var act3_teacher_6 = "Sari, 80."
 
-func act3_result_bayu(passe: bool, result: String):
-	if passe == true:
-		var act3_teacher_7 = "Bayu, nilaimu " + result + "! Bagus!"
-		var act3_bayu_8 = "Yes, nilaiku bagus!"
-		var act3_bayu_9 = "Ga sia-sia belajar ke perpustakaan kemarin."
-	else:
-		var act3_teacher_7 = "Bayu, nilaimu… " + result + ". Nah, siap-siap bersih-bersih kamar mandi, ya!"
-		var act3_bayu_8 = "Ahh.. tidakk.."
-		var act3_bayu_9 = "Ah, serius bersih-bersih kamar mandi?"
+func act3teacher7(result: int):
+	var act3_teacher_7
+	if result >= 80:
+		act3_teacher_7 = "Bayu, nilaimu " + str(result) + "! Bagus!"
+	elif result < 80:
+		act3_teacher_7 = "Bayu, nilaimu… " + str(result) + ". Nah, siap-siap bersih-bersih kamar mandi, ya!"
+	
+	return act3_teacher_7
+
+
+var act3_alt1_bayu_8 = "Yes, nilaiku bagus!"
+var act3_alt1_bayu_9 = "Ga sia-sia belajar ke perpustakaan kemarin."
+
+var act3_alt2_bayu_8 = "Ahh.. tidakk.."
+var act3_alt2_bayu_9 = "Ah, serius bersih-bersih kamar mandi?"

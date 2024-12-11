@@ -1,0 +1,149 @@
+[gd_scene load_steps=7 format=3 uid="uid://0p1nsw7sd8hf"]
+
+[ext_resource type="Script" path="res://script/book_1.gd" id="1_jwkje"]
+[ext_resource type="Texture2D" uid="uid://bedxns7bd3433" path="res://assets/misc/book_1.png" id="1_obb1c"]
+[ext_resource type="Texture2D" uid="uid://cdke4w7orvynv" path="res://assets/bookimg/ditii_1.jpg" id="2_vg2pu"]
+[ext_resource type="Texture2D" uid="uid://bsfdcywomtns8" path="res://assets/bookimg/kartosoewiryo.jpeg" id="3_kqjlp"]
+[ext_resource type="Texture2D" uid="uid://41u1dodhw5p5" path="res://assets/misc/arrow_left.png" id="5_35gsh"]
+[ext_resource type="Texture2D" uid="uid://dffjiqkhfs0yb" path="res://assets/misc/arrow_right.png" id="6_lyw0r"]
+
+[node name="book_1" type="Panel"]
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -372.0
+offset_top = -188.0
+offset_right = 372.0
+offset_bottom = 188.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_jwkje")
+
+[node name="TextureRect" type="TextureRect" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("1_obb1c")
+
+[node name="page_1" type="Control" parent="."]
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="Label" type="Label" parent="page_1"]
+layout_mode = 0
+offset_left = 434.0
+offset_top = 155.0
+offset_right = 671.0
+offset_bottom = 194.0
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/font_size = 13
+text = "Pemberontakan DI/TII 
+(Darul Islam/Tentara Islam Indonesia)"
+horizontal_alignment = 1
+
+[node name="Ditii1" type="Sprite2D" parent="page_1"]
+position = Vector2(193, 185)
+scale = Vector2(0.417519, 0.417519)
+texture = ExtResource("2_vg2pu")
+
+[node name="page_2" type="Control" parent="."]
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="Label2" type="Label" parent="page_2"]
+layout_mode = 0
+offset_left = 68.0
+offset_top = 140.0
+offset_right = 312.0
+offset_bottom = 221.0
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/font_size = 13
+text = "Pemberontakan ini dipimpin oleh Kartosoewiryo yang ingin mendirikan negara Islam di Indonesia, dimulai pada tahun 1949 di Jawa Barat."
+horizontal_alignment = 3
+autowrap_mode = 2
+
+[node name="Label3" type="Label" parent="page_2"]
+layout_mode = 0
+offset_left = 432.0
+offset_top = 144.0
+offset_right = 676.0
+offset_bottom = 225.0
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/font_size = 13
+text = "DI/TII melakukan perlawanan terhadap pemerintah Republik Indonesia yang dianggap tidak sesuai dengan prinsip Islam."
+horizontal_alignment = 3
+autowrap_mode = 2
+
+[node name="page_3" type="Control" parent="."]
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="Label4" type="Label" parent="page_3"]
+layout_mode = 0
+offset_left = 436.0
+offset_top = 152.0
+offset_right = 680.0
+offset_bottom = 233.0
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/font_size = 13
+text = "Tokoh utama: 
+Kartosoewiryo"
+horizontal_alignment = 1
+autowrap_mode = 2
+
+[node name="Kartosoewiryo" type="Sprite2D" parent="page_3"]
+position = Vector2(194, 186)
+scale = Vector2(0.242964, 0.242964)
+texture = ExtResource("3_kqjlp")
+
+[node name="prev_button" type="Button" parent="page_3"]
+layout_mode = 0
+offset_left = 38.0
+offset_top = 288.0
+offset_right = 79.0
+offset_bottom = 329.0
+icon = ExtResource("5_35gsh")
+flat = true
+icon_alignment = 1
+expand_icon = true
+
+[node name="next_button" type="Button" parent="page_3"]
+layout_mode = 0
+offset_left = 666.0
+offset_top = 289.0
+offset_right = 706.0
+offset_bottom = 328.0
+icon = ExtResource("6_lyw0r")
+flat = true
+icon_alignment = 1
+expand_icon = true
+
+[node name="prev_button" type="Button" parent="."]
+layout_mode = 0
+offset_left = 38.0
+offset_top = 288.0
+offset_right = 79.0
+offset_bottom = 329.0
+icon = ExtResource("5_35gsh")
+flat = true
+icon_alignment = 1
+expand_icon = true
+
+[node name="next_button" type="Button" parent="."]
+layout_mode = 0
+offset_left = 666.0
+offset_top = 289.0
+offset_right = 706.0
+offset_bottom = 328.0
+icon = ExtResource("6_lyw0r")
+flat = true
+icon_alignment = 1
+expand_icon = true

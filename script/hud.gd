@@ -6,15 +6,14 @@ extends Control
 func _ready() -> void:
 	interact_sign.text = ""
 
+# Set text to display on object
 func set_obj_text(textinput: String):
 	obj_text.text = textinput
 
+# Set interact sign text
 func set_interact_sign(textinput: String):
 	interact_sign.text = textinput
 
-# Called when the node enters the scene tree for the first time.
-
-
-# Called every frame. 'delta' is the elapsed time since the previous frame.
+# Update function is left empty intentionally
 func _process(delta: float) -> void:
 	pass

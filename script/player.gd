@@ -8,7 +8,11 @@ func _ready():
 
 func _physics_process(delta):
 	player_movement(delta)
-	
+
+func setPlayertoIdle():
+	print("Harusnya back_idle")
+	$AnimatedSprite2D.play("back_idle")
+
 func player_movement(delta):
 	if Input.is_action_pressed("keyto_right"):
 		if global.player_movable == true:

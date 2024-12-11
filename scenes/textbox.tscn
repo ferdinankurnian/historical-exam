@@ -15,6 +15,7 @@ border_color = Color(0.271492, 0.207081, 0.056428, 1)
 script = ExtResource("1_jxpmg")
 
 [node name="TextboxContainer" type="MarginContainer" parent="."]
+z_index = 2
 anchors_preset = 12
 anchor_top = 1.0
 anchor_right = 1.0
@@ -60,10 +61,8 @@ size_flags_vertical = 3
 theme_override_colors/font_color = Color(0.993702, 0.906447, 0.681259, 1)
 theme_override_fonts/font = ExtResource("1_6q361")
 theme_override_font_sizes/font_size = 35
-text = "Text goes here yeah and lorem ipsum dolor sit amet, consectetur adipiscing velit, et lorem ipsum dolored sat, la main pour ta vie en lui."
+text = "Text goes here yeah and lorem ipsum dolor sit amet, pour ta vie en lui."
 autowrap_mode = 2
-visible_characters = 0
-visible_ratio = 0.0
 
 [node name="EndMessage" type="Label" parent="TextboxContainer/MarginContainer/VBoxContainer"]
 layout_mode = 2
@@ -73,3 +72,11 @@ theme_override_colors/font_color = Color(0.330344, 0.267296, 0.103003, 1)
 theme_override_fonts/font = ExtResource("1_6q361")
 theme_override_font_sizes/font_size = 26
 text = "Press space to continue"
+
+[node name="Blackout" type="ColorRect" parent="."]
+visible = false
+offset_left = -855.0
+offset_top = -845.0
+offset_right = 1897.0
+offset_bottom = 1288.0
+color = Color(0, 0, 0, 1)

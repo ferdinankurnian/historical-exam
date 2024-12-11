@@ -1,0 +1,129 @@
+[gd_scene load_steps=7 format=3 uid="uid://c58swrb3dgoyv"]
+
+[ext_resource type="Script" path="res://script/book_3.gd" id="1_pn7gx"]
+[ext_resource type="Texture2D" uid="uid://ca64h7bkyqn4w" path="res://assets/misc/book_3.png" id="1_rk6fu"]
+[ext_resource type="Texture2D" uid="uid://dtrxi5daq81qi" path="res://assets/bookimg/g30spki.jpg" id="2_ru3w2"]
+[ext_resource type="Texture2D" uid="uid://c2k8tif007o5q" path="res://assets/bookimg/dnaidit.jpeg" id="3_mi0m1"]
+[ext_resource type="Texture2D" uid="uid://41u1dodhw5p5" path="res://assets/misc/arrow_left.png" id="4_h0dsn"]
+[ext_resource type="Texture2D" uid="uid://dffjiqkhfs0yb" path="res://assets/misc/arrow_right.png" id="5_jejaa"]
+
+[node name="book_3" type="Panel"]
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -372.0
+offset_top = -188.0
+offset_right = 372.0
+offset_bottom = 188.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_pn7gx")
+
+[node name="TextureRect" type="TextureRect" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("1_rk6fu")
+
+[node name="page_1" type="Control" parent="."]
+visible = false
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="Label" type="Label" parent="page_1"]
+layout_mode = 0
+offset_left = 418.0
+offset_top = 151.0
+offset_right = 687.0
+offset_bottom = 217.0
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/font_size = 14
+text = "Pemberontakan G30S/PKI 
+(Gerakan 30 September/Partai Komunis Indonesia)"
+horizontal_alignment = 1
+autowrap_mode = 2
+
+[node name="G30Spki" type="Sprite2D" parent="page_1"]
+position = Vector2(195, 191)
+scale = Vector2(0.45549, 0.45549)
+texture = ExtResource("2_ru3w2")
+
+[node name="page_2" type="Control" parent="."]
+visible = false
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="Label2" type="Label" parent="page_2"]
+layout_mode = 0
+offset_left = 61.0
+offset_top = 138.0
+offset_right = 317.0
+offset_bottom = 239.0
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/font_size = 14
+text = "Pada 1965, PKI berusaha menggulingkan pemerintah dan membentuk pemerintahan komunis."
+horizontal_alignment = 3
+autowrap_mode = 2
+
+[node name="Label3" type="Label" parent="page_2"]
+layout_mode = 0
+offset_left = 418.0
+offset_top = 127.0
+offset_right = 689.0
+offset_bottom = 239.0
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/font_size = 14
+text = "Gerakan ini dikenal dengan sebutan G30S/PKI, yang berakhir dengan penangkapan dan pembunuhan tujuh jenderal serta penggulingan kekuasaan Presiden Soekarno."
+horizontal_alignment = 3
+autowrap_mode = 2
+
+[node name="page_3" type="Control" parent="."]
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="Label4" type="Label" parent="page_3"]
+layout_mode = 0
+offset_left = 507.0
+offset_top = 159.0
+offset_right = 620.0
+offset_bottom = 208.0
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/font_size = 14
+text = "Tokoh utama: 
+D.N. Aidit (PKI)"
+horizontal_alignment = 1
+
+[node name="Dnaidit" type="Sprite2D" parent="page_3"]
+position = Vector2(191, 186)
+scale = Vector2(0.317778, 0.317778)
+texture = ExtResource("3_mi0m1")
+
+[node name="prev_button" type="Button" parent="."]
+layout_mode = 0
+offset_left = 38.0
+offset_top = 288.0
+offset_right = 79.0
+offset_bottom = 329.0
+icon = ExtResource("4_h0dsn")
+flat = true
+icon_alignment = 1
+expand_icon = true
+
+[node name="next_button" type="Button" parent="."]
+layout_mode = 0
+offset_left = 666.0
+offset_top = 289.0
+offset_right = 706.0
+offset_bottom = 328.0
+icon = ExtResource("5_jejaa")
+flat = true
+icon_alignment = 1
+expand_icon = true
